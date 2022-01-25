@@ -4,6 +4,18 @@ resource "aws_s3_bucket" "s3_bucket" {
   bucket = var.bucket_name
 
   acl    = "public-read"
+
+  website {
+    index_document = "index.html"
+    error_document = "error.html"
+  }
+
+  tags = var.tags
+}
+
+resource "aws_s3_bucket_policy" "s3_bucket" {
+  bucket = aws_s3_bucket.s3_bucket.id
+
   policy = <<EOF
 {
     "Version": "2012-10-17",
@@ -16,17 +28,10 @@ resource "aws_s3_bucket" "s3_bucket" {
                 "s3:GetObject"
             ],
             "Resource": [
-                "arn:aws:s3:::${var.bucket_name}/*"
+                "arn:aws:s3:::${aws_s3_bucket.s3_bucket.id}/*"
             ]
         }
     ]
 }
 EOF
-
-  website {
-    index_document = "index.html"
-    error_document = "error.html"
-  }
-
-  tags = var.tags
 }
