@@ -47,7 +47,7 @@ module "ec2_instances" {
   }
 }
 
-module "website_s3_bucket" {
+module "website_s3_bucket_suchintan" {
   source = "./modules/aws-s3-static-website-bucket"
 
   bucket_name = "robin-test-dec-17-2019"
