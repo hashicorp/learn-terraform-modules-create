@@ -43,3 +43,15 @@ resource "aws_s3_bucket_policy" "s3_bucket" {
     ]
   })
 }
+
+module "website_s3_bucket" {
+  source = "./modules/aws-s3-static-website-bucket"
+
+  bucket_name = "<Billybucketsec90>"
+
+  tags = {
+    Terraform   = "true"
+    Environment = "dev"
+  }
+}
+
