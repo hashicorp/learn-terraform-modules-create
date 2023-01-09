@@ -34,8 +34,7 @@ module "ec2_instances" {
   version = "4.3.0"
 
   count = 2
-
-  name           = "my-ec2-cluster-${count.index}"
+  name  = "my-ec2-cluster-${count.index}"
 
   ami                    = "ami-0c5204531f799e0c6"
   instance_type          = "t2.micro"
