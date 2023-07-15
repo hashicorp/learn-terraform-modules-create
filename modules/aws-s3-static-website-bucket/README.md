@@ -1,3 +1,5 @@
 # AWS S3 static website bucket
 
-This module provisions AWS S3 buckets configured for static website hosting.
+This module will allow for upload of your resume and upload the resume 
+to an S3 bucket as a static website. Feel free to override this configuration
+

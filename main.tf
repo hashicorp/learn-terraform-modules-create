@@ -7,7 +7,7 @@ terraform {
   required_providers {
     aws = {
       source  = "hashicorp/aws"
-      version = "4.49.0"
+      version = "5.7.0"
     }
   }
 }
@@ -16,6 +16,7 @@ provider "aws" {
   region = "us-west-2"
 }
 
+/*
 module "vpc" {
   source  = "terraform-aws-modules/vpc/aws"
   version = "3.18.1"
@@ -49,6 +50,8 @@ module "ec2_instances" {
     Environment = "dev"
   }
 }
+*/
+
 
 module "website_s3_bucket" {
   source = "./modules/aws-s3-static-website-bucket"
