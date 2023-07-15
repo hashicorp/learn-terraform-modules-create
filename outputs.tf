@@ -30,10 +30,6 @@ output "website_bucket_domain" {
   value       = module.website_s3_bucket.domain
 }
 
-#https://achaidez-s3-static-website-bucket.s3.us-west-2.amazonaws.com/index.html
-#https://achaidez-s3-static-website-bucket.s3.us-west-2.amazonaws.com/index.html
-
-#https://achaidez-s3-static-website-bucket.s3-website-us-west-2.amazonaws.com/index.html
 
 output "website_address" {
   description = "Copy this value to your browser"
